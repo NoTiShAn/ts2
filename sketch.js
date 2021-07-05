@@ -65,7 +65,7 @@ function setup() {
 
 }
 function draw() {
-  background(56,44,44); 
+  background("black"); 
  
   //Engine.update(engine);
   //text(mouseX + ',' + mouseY, 10, 15);
@@ -128,3 +128,21 @@ function keyPressed() {
   slingShot.attach(ball.body)
   }
 }
+  async function getBackGroundImage(){
+    var response = await fetch("https://worldtimeapi.org/api/timezone/Asia/Kolkata");
+    //var response = await fetch("https://worldtimeapi.org/api/timezone/America/New_York");
+    var responseJSON = await response.json();
+    var dateTime = responseJSON.datetime;
+    var hour = dateTime.slice(11,13);
+    //var bg;
+    console.log(hour);
+    console.log(dateTime);
+    if(hour >=6 && hour <19){
+      bg = "black";
+    }
+    else{
+      bg = "white";
+    }
+  
+    backgroundImg = loadImage(bg);
+  }

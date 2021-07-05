@@ -65,7 +65,7 @@ function setup() {
 
 }
 function draw() {
-  background("black"); 
+  background("white"); 
  
   //Engine.update(engine);
   //text(mouseX + ',' + mouseY, 10, 15);
@@ -138,10 +138,10 @@ function keyPressed() {
     console.log(hour);
     console.log(dateTime);
     if(hour >=6 && hour <19){
-      bg = "black";
+      bg = "white";
     }
     else{
-      bg = "white";
+      bg = "black";
     }
   
     backgroundImg = loadImage(bg);
